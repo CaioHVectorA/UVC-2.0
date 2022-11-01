@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 const Div = (nome,local,tipo,desc,img) => {
   const imglink = 'url('+img+')'
@@ -59,11 +60,13 @@ const MR = new hist(
         return (
           <div>
             <Header />
-          <div style={{display: 'grid',gridTemplateColumns: 'repeat(auto-fit,300px)',gap: '130px',marginLeft: '4%',marginRight: '4%'}}>
+          <section style={{display: 'grid',gridTemplateColumns: 'repeat(auto-fit,300px)',gap: '130px',marginLeft: '4%',marginRight: '4%'}}>
             {AllHists.map(({nome,local,tipo,descricao,img}) => (
               Div(nome,local,tipo,descricao,img)
             ))}
-          </div>
+          </section>
+          <Footer />
+
           </div>
 )}
 

@@ -1,0 +1,58 @@
+:root {
+    --cor-principal: #B140A6;
+    --cor-fundo: #202020;
+    --cor-secundaria: #da4ecc;
+    --cor-terciaria: #6e2367;   
+}
+
+* {font-family: 'Arial';margin: 0}
+
+@media (max-width: 480px) {
+    html {
+    font-size: 10px;
+    }
+}
+
+h1,h2,h3 {font-family: 'Gabriela';text-align: center;}
+
+h1 {
+    font-family: 'Gabriela';
+    font-weight: bold;
+    font-size: 4.2rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 2.36rem;
+}
+
+.center {
+    display: grid;
+    place-items: center;
+    gap: 0.025rem;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 2.18rem;
+}
+
+.button {
+    padding: 9px 16px;
+    background-color: var(--cor-principal);
+    max-width: fit-content;
+    text-align: center;
+    border-radius: 25px;
+    font-size: 25px;
+    box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%);
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.button:hover {
+    background-color: var(--cor-terciaria);
+}

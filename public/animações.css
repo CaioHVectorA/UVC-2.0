@@ -1,0 +1,41 @@
+.scale {
+    transition: 200ms;
+    transform: scale(1);
+}
+
+.scale:hover {
+    transform: scale(1.16);
+}
+
+.uvcimg:hover {
+    transform: scale(1.6) !important
+}
+@keyframes abrirmenu {
+    0% {
+        width: 0%;
+        transition: 200ms;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes fecharmenu {
+    0% {
+        width: 100%;
+        transition: 200ms;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+.sliderleft {
+animation: abrirmenu 360ms ease-in-out forwards;
+}
+
+.sliderright {
+    animation: fecharmenu 360ms ease-in-out forwards;
+    }

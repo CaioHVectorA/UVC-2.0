@@ -39,3 +39,22 @@ animation: abrirmenu 360ms ease-in-out forwards;
 .sliderright {
     animation: fecharmenu 360ms ease-in-out forwards;
     }
+
+    .hoverscale {
+        transform: scale(1);
+        transition: 500ms;
+    }
+
+    .hoverscale:hover {
+        transform: scale(1.1);
+        transition: 200ms;
+        cursor: pointer;
+        background: #581a52 !important;
+        border: 0px solid black !important;
+    }
+/* 
+    .hoverscale:not(:hover) {
+        transform: scale(0.9);
+        transition: 200ms;
+
+    } */

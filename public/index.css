@@ -5,11 +5,14 @@
     --cor-terciaria: #6e2367;   
 }
 
+html {font-size: 12px;}
+a {text-decoration: none;}
+a:hover {cursor: pointer;}
 * {font-family: 'Arial';margin: 0}
 
 @media (max-width: 480px) {
     html {
-    font-size: 10px;
+    font-size: calc(8px + 0.32vw);
     }
 }
 
@@ -40,12 +43,27 @@ h4 {
     font-size: 2.18rem;
 }
 
+p {
+    font-size: 2.7rem;
+}
+
+.teste:hover {
+    cursor: pointer;
+}
+
+.link {
+    color: '#327ba8';
+    font-size: 20px;
+    pointer-events: auto;
+    cursor: pointer !important;
+}
+
 .button {
     padding: 9px 16px;
     background-color: var(--cor-principal);
     max-width: fit-content;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 50px;
     font-size: 25px;
     box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%);
     cursor: pointer;

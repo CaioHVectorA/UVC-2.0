@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
     const Div = (nome,local,tipo,desc,img) => {
-        console.log(img)
         const imglink =  `url(${process.env.PUBLIC_URL + 'img/' + img})`
     //    const nome = n
     //    const local = Args[1].toUpperCase()
@@ -40,24 +39,10 @@ const DivHists = () => {
         'terra',
         'solo',
         'O Sistema destruiu a vida de Kerry. Mas quando ele se levanta,seu único desejo é a vingança.',
-        'Kerry.png',
-    )
-    const Kerry2 = new Hist(
-        'Kerry',
-        'terra',
-        'solo',
-        'O Sistema destruiu a vida de Kerry. Mas quando ele se levanta,seu único desejo é a vingança.',
-        'Kerry.png',
-    )
-    const Kerry3 = new Hist(
-        'Kerry',
-        'terra',
-        'solo',
-        'O Sistema destruiu a vida de Kerry. Mas quando ele se levanta,seu único desejo é a vingança.',
-        'Kerry.png',
+        'Kerry.png'
     )
 
-    const AllHists = [Kerry,Kerry2,Kerry3]
+    const AllHists = [Kerry]
   return (
         <div style={{marginTop: '156px',display: 'grid',gridTemplateColumns: 'repeat(auto-fit,300px)',gap: mobile ? '24px' : '130px',marginLeft: '4%',marginRight: '4%',justifyContent: 'center'}}>
         {AllHists.map(({nome,local,tipo,desc,img}) => (

@@ -22,7 +22,7 @@ var mobile = window.outerWidth < 480
     }
     }
     return (
-        <header style={{display: 'flex',justifyContent:'space-between',width:'100%',padding:'0px',backgroundColor:'#B140A6',alignItems: 'center',maxHeight: '82px',paddingRight: mobile ? '24px' : '0px'}}>
+        <header style={{display: 'flex',maxWidth: '1800px',margin: '0 auto',justifyContent:'space-between',width:'100%',padding:'0px',backgroundColor:'#B140A6',alignItems: 'center',maxHeight: '82px',paddingRight: mobile ? '24px' : '0px'}}>
             <a href="#"><img className="uvcimg" src={UVC} style={{width: '128px',height: '128px',transform: 'scale(1.4)',position: 'relative',left: mobile ? '46px' : '68px',top:'14px',transition: '330ms'}} /></a>
             {!mobile && <ul style={{marginRight: '3%',display: 'flex',gap: '22px'}}>
                <a href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Gabriela'}}><li style={{fontSize: '32px',color: 'white',fontFamily: 'Gabriela'}}>Contos</li> </a>

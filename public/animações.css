@@ -58,3 +58,44 @@ animation: abrirmenu 360ms ease-in-out forwards;
         transition: 200ms;
 
     } */
+
+    .seta {
+        transition: 300ms;
+        transform: scale(1);
+    }
+
+    .seta:hover {
+        scale: 1.4;
+        cursor: pointer;
+    }
+
+    @keyframes growDown {
+        0% {
+            opacity: 0;
+            transform: translatey(-30px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translatey(0px);
+          }
+        }
+
+        @keyframes Open {
+            0% {
+                opacity: 0;
+                transform: translateY(50%);
+                height: 0%;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translate(0);
+                height: 100%;
+            }
+
+        }
+
+        .open {
+            animation: Open 1000ms ease-in-out forwards;
+        }

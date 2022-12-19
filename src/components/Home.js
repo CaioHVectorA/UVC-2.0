@@ -4,9 +4,17 @@ import imgArner from '../img/rrh_slide.png'
 import imgMR from '../img/MR_Slide.png'
 import space from '../img/espaço.jpg'
 import imgCong from '../img/Cong_Slide.png'
-import AllHists from './txt/Allhists'
 import DivHists from './DivHists'
 import { Link } from 'react-router-dom'
+import UserContext from './UserContext'
+import { useContext } from 'react'
+import styled from 'styled-components'
+import Hists from './Backend/Hists.json'
+import { AllCharacters } from './Backend/BackendPersonagens'
+
+
+console.log(AllCharacters)
+
 const Division = function() {
   return (
     <div style={{backgroundColor: 'rgba(255,255,255,0.5)',width: '80%',height: '3.5px',margin: '12 auto',borderRadius: '25px'}}>
@@ -22,6 +30,27 @@ const Division2 = function() {
 }
 
 const Home = function() {
+  const Button = styled.button`
+      padding: 9px 16px;
+      background-color: ${props => props.propscor[0]};
+      max-width: fit-content;
+      text-align: center;
+      border-radius: 50px;
+      font-size: 25px;
+      box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%);
+      
+      text-decoration: none;
+      color: white;
+      border: none;
+      &:hover {
+        cursor: pointer;
+        background-color: ${props => props.propscor[0]}
+  
+      }
+  `
+
+  const { cor,setCor } = useContext(UserContext)
+
   var mobile = window.outerWidth < 480
 
 
@@ -100,7 +129,7 @@ React.useEffect(function() {
     {!mobile && <div style={{width: '100%',height: 'calc(100vh - 82px)',maxWidth: '1800px',margin: '0 auto',position: 'relative'}}>
       <div style={{position: 'absolute',padding: '82px 45px',flexDirection: 'column-reverse',display: 'flex',gap:'12px',width: '100%',height: '100%',justifyContent: 'center',background: 'linear-gradient(49deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8841911764705882) 32%, rgba(0,0,0,0) 100%)',backdropFilter: 'blur(0.45px)'}}>
       <div style={{display:'flex',flexDirection: 'column-reverse',placeItems: 'center',gap:'10px',width:'30%' }}>
-      <button className='button' style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}}>Filtrar</button>
+      <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}}>Filtrar</Button>
       <p style={{maxWidth: '390px',fontSize: '25px',textAlign: 'center'}}>{index[2]}</p>
       <p style={{fontSize: '24px',fontFamily: 'Roboto Slab'}}>{index[1]}</p>
       <h1 className='fontslide' style={{textAlign: 'start',fontSize:'69px',letterSpacing: '2.8px',color: '#fff',textShadow: `rgba(0,0,0,0) 3px 5px 2px`}}>{index[0]}</h1>

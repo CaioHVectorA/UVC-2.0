@@ -26,7 +26,7 @@ const Inicial = () => {
       <Header />
     {!mobile && <div className='center' style={{gap: '22vh',padding: '0px 36px'}}> 
     <img src={fundo} style={{width: '100%',position:'absolute',top: '82px',left: '0px',mixBlendMode: 'darken',zIndex: '-100',height:'calc(100vh - 82px)'}}/>
-    <h1 style={{top: '64px',position: 'relative',fontSize: '80px'}}>Bem vindo ao UVC</h1>
+    <h1 style={{top: '64px',position: 'relative',fontSize: '80px'}}>Bem vindo ao UVC!</h1>
     {/* nao ta centralizando o treco ai */}
 
     <h4 style={{textAlign: 'center',fontSize: '2.8rem'}}>Diversos contos <span style={{color:'#F8BC22'}}>fantásticos</span> disponibilizados gratuitamente!</h4>

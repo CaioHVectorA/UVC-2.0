@@ -14,7 +14,7 @@ const LinkBar = styled.div`
 width: 100%;
 background-color: ${cor[0]};
 color: #e7e7e7;
-font-family: 'Gabriela';
+font-family: 'Ropa Sans';
 font-size: 38px;
 text-align: end;
 padding: 8px 48px;

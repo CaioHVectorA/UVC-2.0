@@ -1,1 +1,51 @@
-{ "AllHists": [ { "Nome:": "Kerry,o Guerreiro da Vingança.", "Tipo": "SOLO", "Ref": "S_KER", "Local": "TERRA" }, { "Nome": "Red Right Hand", "Tipo": "SERIE", "Ref": "SE_RRH", "Local": "UNIVERSAL", "Desc": "Acompanhe a história de uma equipe formado por poderosos que controla Severum e tem como um dos seus objetivos a dominância perante todo o universo,seja em poder aquisitivo ou poder de combate.", "Capitulos": [ { "Nome": "Primeiros passos", "NumEps": 5, "DescCap": "Lorem Ipsum blablabla", "Episodios": { "Ep0": { "Nome": "A reunião", "Ref": "00.txt", "Numero": 0 }, "Ep1": { "Nome": "Corrida Capitalista", "Ref": "01.txt", "Numero": 1 }, "Ep2": { "Nome": "Invasões", "Ref": "02.txt", "Numero": 2 }, "Ep3": { "Nome": "Brechas do passado", "Ref": "03.txt", "Numero": 3 }, "Ep4": { "Nome": "Veredicto", "Ref": "04.txt", "Numero": 4 } } } ] } ] } 
+{
+    "AllHists":[
+       {
+          "Nome:":"Kerry,o Guerreiro da Vingança.",
+          "Tipo":"SOLO",
+          "Ref":"S_KER",
+          "Local":"TERRA"
+       },
+       {
+          "Nome":"Red Right Hand",
+          "Tipo":"SERIE",
+          "Ref":"SE_RRH",
+          "Local":"UNIVERSAL",
+          "Desc":"Acompanhe a história de uma equipe formado por poderosos que controla Severum e tem como um dos seus objetivos a dominância perante todo o universo,seja em poder aquisitivo ou poder de combate.",
+          "Capitulos":[
+             {
+                "Nome":"Primeiros passos",
+                "NumEps":5,
+                "DescCap":"Lorem Ipsum blablabla",
+                "Episodios":{
+                   "Ep0":{
+                      "Nome":"A reunião",
+                      "Ref":"00.txt",
+                      "Numero":0
+                   },
+                   "Ep1":{
+                      "Nome":"Corrida Capitalista",
+                      "Ref":"01.txt",
+                      "Numero":1
+                   },
+                   "Ep2":{
+                      "Nome":"Invasões",
+                      "Ref":"02.txt",
+                      "Numero":2
+                   },
+                   "Ep3":{
+                      "Nome":"Brechas do passado",
+                      "Ref":"03.txt",
+                      "Numero":3
+                   },
+                   "Ep4":{
+                      "Nome":"Veredicto",
+                      "Ref":"04.txt",
+                      "Numero":4
+                   }
+                }
+             }
+          ]
+       }
+    ]
+ }

@@ -10,10 +10,7 @@ import UserContext from './UserContext'
 import { useContext } from 'react'
 import styled from 'styled-components'
 import Hists from './Backend/Hists.json'
-import { AllCharacters } from './Backend/BackendPersonagens'
 
-
-console.log(AllCharacters)
 
 const Division = function() {
   return (

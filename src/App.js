@@ -9,6 +9,7 @@ import UserContext from "./components/UserContext";
 import Personalizar from "./components/Personalizar";
 import TemaCor from "./components/Personalizar/TemaCor";
 import Personagens from "./components/Personagens";
+import Search from "./components/Search";
 const App = () => {
   const fundos = {
     UVC: ['#B140A6','#912987','#da4ecc'],
@@ -19,6 +20,8 @@ const App = () => {
   }
   let teste = localStorage.getItem('cor')
   const [cor,setCor] = React.useState(fundos.UVC);
+  const [search,setSearch] = React.useState('')
+  // const [personagemGlob,setPersonagemGlob] = React.useState(null)
   React.useEffect(() => {
     if (teste) {
       setCor(JSON.parse(teste))
@@ -26,13 +29,14 @@ const App = () => {
   }, [])
 return (
   <BrowserRouter>
-  <UserContext.Provider value={{ cor,setCor }}>
+  <UserContext.Provider value={{ cor,setCor,search,setSearch}}>
   <Routes>
     <Route path="/" element={<Inicial />} />
     <Route path="Personalizar" element={<Personalizar />} />
     <Route path="/Personalizar/TemaCor" element={<TemaCor />} />
     <Route path="Home" element={<Home />} />
     <Route path="Personagens" element={<Personagens />} />
+    <Route path="Search" element={<Search />} />
   </Routes>
   </UserContext.Provider>
 </BrowserRouter>

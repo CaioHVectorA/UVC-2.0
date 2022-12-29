@@ -121,7 +121,7 @@ var mobile = window.outerWidth < 600;
                </div>
             </ul>}
             {mobile && <img src={menu} onClick={HandleClick} style={{width: '53px'}}/>}
-            {Menu && <ul ref={lista} className="sliderleft" style={{display: mobile ? 'flex' : 'none',gap: '22px',flexDirection: 'column',position:'absolute',right:'0px',top: '82px',background: cor[1],width: '0%',height: 'calc(100% - 70px)',overflow: 'hidden'}}>
+            {Menu && <ul ref={lista} className="sliderleft" style={{display: mobile ? 'flex' : 'none',zIndex: '200',gap: '22px',flexDirection: 'column',position:'absolute',right:'0px',top: '82px',background: cor[1],width: '0%',height: 'calc(100% - 70px)',overflow: 'hidden'}}>
               <Link to="/Home" style={{textAlign: 'end',marginTop: '12px'}}><MenuItem>Contos</MenuItem></Link>
               <Link to="/Personagens"  onClick={() => {localStorage.setItem('personagemGlob',null)}} style={{textAlign: 'end'}}><MenuItem>Personagens</MenuItem></Link>
               <Link to="/Personalizar" style={{textAlign: 'end'}}><MenuItem>Outros</MenuItem></Link>

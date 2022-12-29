@@ -46,6 +46,103 @@
                 }
              }
           ]
+       },
+       {
+         "Nome":"Menino Resiliente",
+         "Tipo":"SERIE",
+         "Ref":"SE_MR",
+         "Local":"TERRA",
+         "Desc":"Larry,um menino tranquilo se envolve em acidentes e ocorre atrocidades em sua vida.Porém,em meio a tristeza e a perdição,ele percebe que ele tem um poder incomum.",
+         "Capitulos":[
+            {
+               "Nome":"Uma nova Luz",
+               "NumEps":3,
+               "DescCap":"Lorem Ipsum blablabla",
+               "Episodios":{
+                  "Ep1":{
+                     "Nome":"Desejos",
+                     "Ref":"01.txt",
+                     "Numero":1
+                  },
+                  "Ep2":{
+                     "Nome":"O Experimento",
+                     "Ref":"02.txt",
+                     "Numero":2
+                  },
+                  "Ep3":{
+                     "Nome":"Sonhos",
+                     "Ref":"03.txt",
+                     "Numero":3
+                  }
+               }
+            },
+            {
+               "Nome":"Resiliência e Persistência",
+               "NumEps":3,
+               "DescCap":"Lorem Ipsum blablabla",
+               "Episodios":{
+                  "Ep4": {
+                     "Nome":"Contra tudos,contra todos.",
+                     "Ref":"04.txt",
+                     "Numero": 4
+                  },
+                  "Ep5": {
+                     "Nome":"Superações",
+                     "Ref":"05.txt",
+                     "Numero": 5
+                  },
+                  "Ep6": {
+                     "Nome": "Novos Desafios",
+                     "Ref": "06.txt",
+                     "Numero": 6
+                  }
+               }
+            },
+            {
+               "Nome": "Persistência e Ascensão",
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep7": {
+                     "Nome":"A sombra da noite",
+                     "Ref":"07.txt",
+                     "Numero": 7
+                  },
+                  "Ep8": {
+                     "Nome":"Predador e a presa",
+                     "Ref":"08.txt",
+                     "Numero": 8
+                  },
+                  "Ep9": {
+                     "Nome": "Repetições sem fim",
+                     "Ref": "09.txt",
+                     "Numero": 9
+                  } 
+               }
+            },
+            {
+               "Nome": "Ascensão e Vitória!",
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep10": {
+                     "Nome":"Sem descanso",
+                     "Ref":"010.txt",
+                     "Numero": 10
+                  },
+                  "Ep11": {
+                     "Nome":"Dois por um",
+                     "Ref":"011.txt",
+                     "Numero": 11
+                  },
+                  "Ep12": {
+                     "Nome": "Vitória ou Auto-Ilusão?",
+                     "Ref": "012.txt",
+                     "Numero": 12
+                  } 
+               }
+            }
+         ]
        }
     ]
  }

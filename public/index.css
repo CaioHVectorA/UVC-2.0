@@ -21,12 +21,13 @@ a:hover {cursor: pointer;}
     }
 }
 
-h1,h2,h3 {font-family: 'Gabriela';text-align: center;}
+h1,h2,h3 {font-family: 'Arial';text-align: center;}
 
 h1 {
-    font-family: 'Gabriela';
+/* font-family: 'Ropa Sans'; */
     font-weight: bold;
     font-size: 4.2rem;
+    /* letter-spacing: 3.2px; */
 }
 
 .fontslide {font-family: 'Lakers';}
@@ -97,7 +98,7 @@ p {
     flex-shrink: 0;
     border-radius: 25px;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 76px 1fr;
     /* background: 
     background-size: cover; */
     /* background-image: url(/src/imgs/congregadores\ mão.png); */
@@ -107,5 +108,5 @@ p {
 font-size: 20px;
 border-bottom: 1px solid rgba(0,0,0,0.4);
 padding: 12px 6px;
-font-family: 'Gabriela';
+font-family: 'Ropa Sans';
 }

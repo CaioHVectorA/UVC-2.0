@@ -6,7 +6,7 @@ import UserContext from './UserContext'
 import styled from 'styled-components'
 const Inicial = () => {
   const { cor,setCor } = useContext(UserContext)
-
+  document.title = 'UVC'
   const Button = styled.button`
       padding: 9px 16px;
       background-color: ${cor[0]};

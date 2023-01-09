@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom'
 import useGetCreateStorage from '../Hooks/useGetCreateStorage'
 const Search = () => {
     const {cor,setCor,search,setSearch} = useContext(UserContext)
+    if (!search) {
+        setSearch('Nada')
+    }
  const stylebutton = {
     background: cor[0],
 boxShadow: '0px 4px 4px #000000',
@@ -27,7 +30,7 @@ margin: '0 auto',
                     <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',textTransform: 'capitalize',color: 'rgba(255,255,255,0.5)'}}>{conto.tipo}</p>
                 </div>
                 <h1 style={{fontFamily: 'Lakers',fontSize: '40px',fontWeight: 'normal',textAlign: 'start'}}>{conto.nome}</h1>
-                <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',textTransform: 'capitalize',color: 'rgba(255,255,255,1)',textOverflow: 'ellipsis',whiteSpace: 'nowrap',overflow: 'hidden'}}>{conto.desc}</p>
+                <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',color: 'rgba(255,255,255,1)',textOverflow: 'ellipsis',whiteSpace: 'nowrap',overflow: 'hidden'}}>{conto.desc}</p>
                 <Link to={'/'} style={stylebutton}>Acesse Agora!</Link>
             </div>
             </li>
@@ -44,7 +47,7 @@ margin: '0 auto',
                   <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',textTransform: 'capitalize',color: 'rgba(255,255,255,0.5)'}}>{character.equipe}</p>
               </div>
               <h1 style={{fontFamily: 'Lakers',fontSize: '40px',fontWeight: 'normal',textAlign: 'start'}}>{character.nome}</h1>
-              <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',textTransform: 'capitalize',color: 'rgba(255,255,255,1)',textOverflow: 'ellipsis',whiteSpace: 'nowrap',overflow: 'hidden'}}>{character.desc}</p>
+              <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',color: 'rgba(255,255,255,1)',textOverflow: 'ellipsis',whiteSpace: 'nowrap',overflow: 'hidden'}}>{character.desc}</p>
               <Link to={'/Personagens'} onClick={() => {localStorage.setItem('personagemGlob',character.nome)}} style={stylebutton}>Acesse Agora!</Link>
           </div>
           </li>
@@ -55,7 +58,8 @@ margin: '0 auto',
     <div>
         <Header />
         <h1 style={{marginTop: '40px'}}>Você pesquisou por: {search}</h1>
-        <h2 style={{position: 'relative',marginTop: '16px',right: '256px'}}>Resultados:</h2>
+        {search === 'Nada' && <p style={{textAlign: 'center',marginTop: '20px',fontSize: '24px'}}>Adicione palavras chave melhores e nomes existentes para melhorar seus resultados.</p>}
+        {search !== 'Nada' && <h2 style={{position: 'relative',marginTop: '16px',right: '256px'}}>Resultados:</h2>}
         <div style={{display: 'flex',placeItems: 'center',flexDirection: 'column',gap: '56px'}}>
         <ul style={{display: 'flex',placeItems: 'center',flexDirection: 'column',gap: '56px'}}>{Contos}</ul>
         <ul style={{display: 'flex',placeItems: 'center',flexDirection: 'column',gap: '56px'}}>{characters}</ul>

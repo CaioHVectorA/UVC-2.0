@@ -1,14 +1,15 @@
-import React from 'react'
+    import React from 'react'
 
-const useGetCreateStorage = (chave,inicial) => {
-    const [state,setState] = React.useState(() => {
-        const local = localStorage.getItem(chave);
-        // console.log(chave,local)
-        return local ? local : inicial
-})
-React.useEffect(() => {
-    window.localStorage.setItem(chave,state)
-}, [state, chave])
-return [state,setState]
-}
+    const useGetCreateStorage = (key, inicial) => {
+        const [state, setState] = React.useState(() => {
+          const local = window.localStorage.getItem(key);
+          return local ? local : inicial;
+        });
+      
+        React.useEffect(() => {
+          window.localStorage.setItem(key, state);
+        }, [key, state]);
+      
+        return [state, setState];
+      };
 export default useGetCreateStorage

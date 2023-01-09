@@ -5,6 +5,8 @@ import UserContext from '../UserContext'
 import { useContext } from 'react'
 import useGetCreateStorage from '../../Hooks/useGetCreateStorage'
 const TemaCor = () => {
+document.title = 'Personalizar cor'
+
     const { cor,setCor } = useContext(UserContext)
     const BoxCor = styled.div`
     padding: 14px 24px;

@@ -10,6 +10,8 @@ import Personalizar from "./components/Personalizar";
 import TemaCor from "./components/Personalizar/TemaCor";
 import Personagens from "./components/Personagens";
 import Search from "./components/Search";
+import Conto from "./components/Conto";
+import PageHist from "./components/PageHist";
 const App = () => {
   const fundos = {
     UVC: ['#B140A6','#912987','#da4ecc'],
@@ -21,6 +23,8 @@ const App = () => {
   let teste = localStorage.getItem('cor')
   const [cor,setCor] = React.useState(fundos.UVC);
   const [search,setSearch] = React.useState('')
+  const [ref,setRef] = React.useState('')
+  const [Hist,setHist] = React.useState('')
   // const [personagemGlob,setPersonagemGlob] = React.useState(null)
   React.useEffect(() => {
     if (teste) {
@@ -29,7 +33,7 @@ const App = () => {
   }, [])
 return (
   <BrowserRouter>
-  <UserContext.Provider value={{ cor,setCor,search,setSearch}}>
+  <UserContext.Provider value={{ cor,setCor,search,setSearch,ref,setRef,Hist,setHist}}>
   <Routes>
     <Route path="/" element={<Inicial />} />
     <Route path="Personalizar" element={<Personalizar />} />
@@ -37,6 +41,8 @@ return (
     <Route path="Home" element={<Home />} />
     <Route path="Personagens" element={<Personagens />} />
     <Route path="Search" element={<Search />} />
+    <Route path="Conto" element={<Conto />} />
+    <Route path="PageHist" element={<PageHist />} />
   </Routes>
   </UserContext.Provider>
 </BrowserRouter>

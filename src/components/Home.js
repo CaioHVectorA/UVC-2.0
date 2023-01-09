@@ -10,9 +10,10 @@ import UserContext from './UserContext'
 import { useContext } from 'react'
 import styled from 'styled-components'
 import Hists from './Backend/Hists.json'
-
+console.log(Hists)
 
 const Division = function() {
+  document.title = 'Contos'
   return (
     <div style={{backgroundColor: 'rgba(255,255,255,0.5)',width: '80%',height: '3.5px',margin: '12 auto',borderRadius: '25px'}}>
 
@@ -131,7 +132,7 @@ React.useEffect(function() {
       <p style={{fontSize: '24px',fontFamily: 'Roboto Slab'}}>{index[1]}</p>
       <h1 className='fontslide' style={{textAlign: 'start',fontSize:'69px',letterSpacing: '2.8px',color: '#fff',textShadow: `rgba(0,0,0,0) 3px 5px 2px`}}>{index[0]}</h1>
       </div>
-      <div style={{width: '100%',justifyContent: 'start',display: 'flex',gap: '24px',height: '48px',width: '128px',alignSelf: 'center',justifySelf: 'center',position: 'relative',top: '88%'}}>
+      <div style={{width: '100%',justifyContent: 'start',display: 'flex',gap: '24px',height: '48px',width: '128px',alignSelf: 'center',justifySelf: 'center',position: 'relative',top: '80%'}}>
       <svg className='seta' onClick={backNumber} xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="#fff" style={{transform: 'rotate(180deg)',backgroundColor: 'rgba(0,0,0,0.6)'}}><path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/></svg>
       <svg className='seta' onClick={nextNumber} xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="#fff" style={{backgroundColor: 'rgba(0,0,0,0.6)'}}><path d="m15.2 43.9-2.8-2.85L29.55 23.9 12.4 6.75l2.8-2.85 20 20Z"/></svg>
       </div>

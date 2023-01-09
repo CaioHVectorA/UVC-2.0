@@ -1,10 +1,18 @@
 {
     "AllHists":[
        {
-          "Nome:":"Kerry,o Guerreiro da Vingança.",
+          "Nome":"Kerry,o Guerreiro da Vingança.",
           "Tipo":"SOLO",
           "Ref":"S_KER",
-          "Local":"TERRA"
+          "Desc": "Entenda a origem do herói metálico,que se fortaleceu em meios a perdas e confusões, utilizando o trauma e a vingança como sua maior motivação.",
+          "Local":"TERRA",
+          "lancamento": "",
+          "status": "Completo",
+          "escrito": "Caio Henrique",
+          "tags": [
+         "Drama","Terra","Ação","Violência"
+          ],
+          "imgref": "Kerry.png"
        },
        {
           "Nome":"Red Right Hand",
@@ -12,11 +20,15 @@
           "Ref":"SE_RRH",
           "Local":"UNIVERSAL",
           "Desc":"Acompanhe a história de uma equipe formado por poderosos que controla Severum e tem como um dos seus objetivos a dominância perante todo o universo,seja em poder aquisitivo ou poder de combate.",
+          "lancamento": "",
+          "status": "Em progresso",
+          "escrito": "Caio Henrique",
+          "imgref": "rrhcapa.png",
           "Capitulos":[
              {
                 "Nome":"Primeiros passos",
                 "NumEps":5,
-                "DescCap":"Lorem Ipsum blablabla",
+                "DescCap":"Arner faz a primeira reunião e coloca seus aliados para suas missões iniciais que garantirão o capital para Severum.",
                 "Episodios":{
                    "Ep0":{
                       "Nome":"A reunião",
@@ -48,10 +60,15 @@
           ]
        },
        {
-         "Nome":"Menino Resiliente",
+         "Nome":"Menino Resiliente,part I",
          "Tipo":"SERIE",
-         "Ref":"SE_MR",
+         "Ref":"SE_MR1",
          "Local":"TERRA",
+         "imgref":"MRsmall.png",
+         "lancamento": "",
+         "status": "Em progresso",
+         "escrito": "Caio Henrique",
+         "tags": ["Drama","Terra","Ação","Teen"],
          "Desc":"Larry,um menino tranquilo se envolve em acidentes e ocorre atrocidades em sua vida.Porém,em meio a tristeza e a perdição,ele percebe que ele tem um poder incomum.",
          "Capitulos":[
             {

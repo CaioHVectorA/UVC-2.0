@@ -23,6 +23,7 @@ justify-content:center;
 const Box = styled.div`
 transition: 200ms;
 background-color: #121212;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
 &:hover {
     background-color: ${props => props.cor[1]};
     cursor: pointer;
@@ -114,6 +115,7 @@ const Division = () => {
     )
 }
 const Personagens = () => {
+    document.title = 'Personagens'
     // console.log(AllCharacters)
 var mobile = window.outerWidth < 600;
 const { cor,setCor} = useContext(UserContext)
@@ -192,7 +194,7 @@ React.useEffect(() => {
         </div>
             <Grid>
                 {AllCharacters[0].map(Character => (
-  <Box onClick={() => {setPersonagem(Character)}} cor={cor} key={Character.nome} style={{width: '200px',borderRadius: '25px',border: `1px solid ${cor[0]}`,textAlign: 'center',padding: '20px 0px',fontSize: '20px',fontFamily: 'Lakers'}}>
+  <Box onClick={() => {setPersonagem(Character)}} cor={cor} key={Character.nome} style={{width: '200px',borderRadius: '25px',border: `1px solid #141414`,textAlign: 'center',padding: '20px 0px',fontSize: '20px',fontFamily: 'Lakers'}}>
     {Character.nome}
   </Box>
 ))}

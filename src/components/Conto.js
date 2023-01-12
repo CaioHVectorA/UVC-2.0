@@ -36,6 +36,9 @@ width: 600px;
     background-color: ${(props) => props.cor[2]};
     cursor: pointer
 }
+@media (max-width: 768px) {
+width: 320px;
+}
 `
 
 const ButtonLer = styled.button`
@@ -44,6 +47,7 @@ background-color: ${(props) => props.cor[1]};
 font-size: 20px;
 font-family: Roboto Slab;
 border-radius: 5px;
+white-space: nowrap;
 border: 1px solid rgba(0,0,0,0.8);
 &:hover {
     background-color: ${(props) => props.cor[2]};
@@ -68,15 +72,17 @@ const Mais = () => {
 }
 
 const DropDown = (props) => {
-    const { ref,setRef,cor,setCor,Hist,setHist } = React.useContext(UserContext)  
+  var mobile = window.outerWidth < 480
+    const { ref,setRef,cor,setCor,Hist,setHist,read,setRead } = React.useContext(UserContext)  
 const [display,setDisplay] = React.useState('none')
 const [Histo, setHisto] = useGetCreateStorage('Hist','')
-const Nav = useNavigate()
+const Nav = useNavigate()   
 let data = props.cap
 let eps = data.Episodios
 let epsArray = Object.entries(eps)
 // console.log(epsArray)
 function HandleClick(ep) {
+    setRead([props.refe,ep[1].Nome,props.tipo,props.eps])
     setHist(ref + '/' + ep[1].Ref)
     setHisto(ref + '/' + ep[1].Ref)
     Nav('/PageHist')
@@ -84,13 +90,14 @@ function HandleClick(ep) {
     return (
         <div>   
         <DropBox onClick={() => {if (display === 'none') {setDisplay('flex')} else {setDisplay('none')}}} cor={cor}>
-            <p style={{fontFamily: 'Roboto Slab',fontSize: '26px'}}>{data.Nome}</p>
+            <p style={{fontFamily: 'Roboto Slab',fontSize: !mobile ? '26px' : '18px',whiteSpace: 'nowrap'}}>{data.Nome}</p>
             <Mais />
         </DropBox>
-            <div className='slidedown' style={{display: display,backgroundColor: '#161616',padding: '6px 12px',flexDirection: 'column',gap: '12px'}}>
+        {/* colocar algum limitador de width da parte dos eps */}
+            <div className='slidedown' style={{display: display,backgroundColor: '#161616',padding: '6px 12px',flexDirection: 'column',gap: '12px',maxWidth: mobile ? '320px' : '1800px'}}>
                 {epsArray.map((ep, index) => (
-                    <div style={{display: 'flex',width: '100%',justifyContent: 'space-between'}}>
-                    <p style={{fontFamily: 'Roboto Slab',fontSize: '24px'}} key={index}>{ep[1].Numero}. {ep[1].Nome}</p>
+                    <div key={index} style={{display: 'flex',width: '100%',justifyContent: 'space-between'}}>
+                    <p style={{fontFamily: 'Roboto Slab',fontSize: !mobile ? '26px' : '18px'}} key={index}>{ep[1].Numero}. {ep[1].Nome}</p>
                     <ButtonLer onClick={() => {HandleClick(ep)}} cor={cor}>Ler agora</ButtonLer>
                     </div>
                 ))}
@@ -103,16 +110,22 @@ const Conto = () => {
     const { ref,setRef,cor,setCor } = React.useContext(UserContext)    
     const [heartsvg,setSvg] = React.useState(svgs.heart) 
     let refAtual;
+    var NumEps;
+    var nomehist;
     Hists.AllHists.forEach(hist => {
         if (hist.Ref === ref) {
             refAtual = hist
+            let TempName = refAtual.Nome 
+            let parts = TempName.split(',');
+            nomehist = parts[0]
+            NumEps = hist.eps
         }
     });
   return (
     <div>
         <Header />
 {!refAtual && <h1>Carregando...</h1>}
-{refAtual && !mobile && <div>
+{refAtual && nomehist && !mobile && <div>
  <div style={{display: 'grid',gridTemplateColumns: '4.5fr 8.5fr',width: '100%',paddingTop: '32px',gap: '12px',maxWidth: '1500px',margin: '0 auto'}}>
     <div style={{display: 'flex',flexDirection: 'column',alignItems: 'center',paddingLeft: '132px',gap: '8px'}}>
         <div style={{width: '360px',height: '360px',padding: '24px',background: '#d9d9d9',borderRadius: '12px'}}><img src={process.env.PUBLIC_URL + 'img/' + refAtual.imgref} style={{width: '100%',height: '100%',objectFit: 'cover',borderRadius: '5px'}}/></div>
@@ -127,7 +140,7 @@ const Conto = () => {
             <TagButton cor={cor} key={index}>{tag}</TagButton>
         )) }
         </ul>
-        <div style={{width: '500px',height: '2.6px',backgroundColor: 'rgba(255,255,255,0.2)',borderRadius: '25px',margin: '20px 0px'}}></div>
+        {!mobile && <div style={{width: '500px',height: '2.6px',backgroundColor: 'rgba(255,255,255,0.2)',borderRadius: '25px',margin:'20px 0px'}}></div>}
         <p style={{fontSize: '22px'}}>Status: <span style={{color: refAtual.status === 'Em progresso' ? '#66E42B' : 'white',fontFamily: 'Roboto Slab'}}>{refAtual.status}</span></p>
         <p style={{fontSize: '22px',marginTop: '8px'}}>Escrito por: {refAtual.escrito}</p>
         </div>
@@ -137,7 +150,36 @@ const Conto = () => {
     {refAtual.Tipo === 'SERIE' && <div style={{display: 'grid',justifyContent: 'center'}}>
         <h1 style={{marginBottom: "32px"}}>Capítulos:</h1>
         {refAtual.Capitulos.map((cap, index) => (
-            <DropDown cap={cap} />
+            <DropDown cap={cap} refe={nomehist} tipo={refAtual.Tipo} eps={NumEps}/>
+        ))}
+        </div>} 
+    </div>}
+{refAtual && nomehist && mobile && <div>
+ <div style={{display: 'flex',flexDirection: 'column',width: '100%',paddingTop: '32px',gap: '12px',maxWidth: '1500px',margin: '0 auto'}}>
+    <div style={{display: 'flex',flexDirection: 'column',alignItems: 'center',gap: '8px'}}>
+        <h2 style={{fontSize: '30px',whiteSpace: 'nowrap'}}>{refAtual.Nome}</h2>
+        <div style={{width: '260px',height: '260px',padding: '24px',background: '#d9d9d9',borderRadius: '12px'}}><img src={process.env.PUBLIC_URL + 'img/' + refAtual.imgref} style={{width: '100%',height: '100%',objectFit: 'cover',borderRadius: '5px'}}/></div>
+        <svg onClick={() => {setSvg(svgs.fullheart)}} fill={'white'} width='48px' height='48px'><path d={heartsvg} ></path></svg>
+    </div>
+    <div>
+        <div style={{marginLeft: '0px'}}>
+        <p style={{fontSize: '22px',textAlign: 'center',maxWidth: '480px',fontFamily: 'Roboto Slab',marginTop: '8px'}}>{refAtual.Desc}</p>
+        <ul style={{display: 'flex',gap: '12px',justifyContent: 'center',maxWidth: '480px'}}>
+        {refAtual.tags.map((tag, index) => (
+            <TagButton cor={cor} key={index}>{tag}</TagButton>
+        )) }
+        </ul>
+        <div style={{width: '80%',height: '2.6px',backgroundColor: 'rgba(255,255,255,0.2)',borderRadius: '25px',margin: '20px 0px'}}></div>
+        <p style={{fontSize: '22px'}}>Status: <span style={{color: refAtual.status === 'Em progresso' ? '#66E42B' : 'white',fontFamily: 'Roboto Slab'}}>{refAtual.status}</span></p>
+        <p style={{fontSize: '22px',marginTop: '8px'}}>Escrito por: {refAtual.escrito}</p>
+        </div>
+    </div>
+    </div>
+    <Division size='90%' />
+    {refAtual.Tipo === 'SERIE' && <div style={{display: 'grid',justifyContent: 'center'}}>
+        <h1 style={{marginBottom: "32px"}}>Capítulos:</h1>
+        {refAtual.Capitulos.map((cap, index) => (
+            <DropDown cap={cap} refe={nomehist} tipo={refAtual.Tipo} eps={NumEps}/>
         ))}
         </div>} 
     </div>}

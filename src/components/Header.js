@@ -107,12 +107,12 @@ var mobile = window.outerWidth < 600;
                <Link to="/Personagens" onClick={() => {localStorage.setItem('personagemGlob',null)}} className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Personagens</li> </Link>
                <div>
                <Link to="/Personalizar" href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato',position: 'relative'}}><MenuConfig onMouseOver={HandleOver} onMouseLeave={HandleLeave}>Outros</MenuConfig></Link>
-               {dropdown && <div onMouseLeave={HandleLeave} onMouseOver={HandleOver} style={{width: '200px',display:'flex',flexDirection: 'column',position: 'absolute',top: '80px',justifyContent: 'center',zIndex: 1,animation: 'growDown 300ms ease-in-out forwards'}}>
+               {dropdown && <div onMouseLeave={HandleLeave} onMouseOver={HandleOver} style={{width: '200px',display:'flex',flexDirection: 'column',position: 'absolute',top: '80px',justifyContent: 'center',zIndex: 100,animation: 'growDown 300ms ease-in-out forwards'}}>
                 <Link to="/Personalizar/TemaCor" style={{color: 'white',backgroundColor: cor[1]}} className='listItemPerso'>Cor de Tema</Link>
                 <Link to={"Home"} style={{color: 'white',backgroundColor: cor[1]}} className='listItemPerso'>Favoritos</Link>
                 </div>}
                </div>
-               <a href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Saiba Mais</li> </a>
+               <a href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Saiba mais</li> </a>
                <div style={{display:'flex',height: '41px'}}>
                <Search onChange={(e) => {setBusca(e.target.value)}} onKeyDown={(e) => {if (e.key === 'Enter') {HandleSearch(busca)}}} placeholder="Ciecon   ..."></Search>
                <div onClick={() => {HandleSearch(busca)}} style={{backgroundColor: '#d9d9d9',borderRadius: '0px 25px 25px 0px',height: '100%',cursor: 'pointer',border: 'none',display: 'grid',placeItems: 'center'}}>
@@ -127,7 +127,7 @@ var mobile = window.outerWidth < 600;
               <Link to="/Personalizar" style={{textAlign: 'end'}}><MenuItem>Outros</MenuItem></Link>
               <Link to="" style={{textAlign: 'end'}}><MenuItem>Contato</MenuItem></Link>
               <Link to="" style={{textAlign: 'end'}}><MenuItem>Doação</MenuItem></Link>
-              <Link to="" style={{textAlign: 'end'}}><MenuItem>Saiba Mais</MenuItem></Link>
+              <Link to="" style={{textAlign: 'end'}}><MenuItem>Saiba mais</MenuItem></Link>
             </ul>}
         </header>
     )

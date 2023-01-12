@@ -23,7 +23,7 @@ transition: 120ms;
     background-color: ${cor[1]};
 }
 `
-
+document.title = 'Personalizar'
 
   return (
     <div style={{backgroundColor: '#080808'}}>

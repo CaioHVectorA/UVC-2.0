@@ -7,7 +7,7 @@ import AllContos from './Backend/Contos'
 import { Link } from 'react-router-dom'
 import useGetCreateStorage from '../Hooks/useGetCreateStorage'
 const Search = () => {
-    const {cor,setCor,search,setSearch} = useContext(UserContext)
+    const {cor,setCor,search,setSearch,ref,setRef} = useContext(UserContext)
     if (!search) {
         setSearch('Nada')
     }
@@ -31,7 +31,7 @@ margin: '0 auto',
                 </div>
                 <h1 style={{fontFamily: 'Lakers',fontSize: '40px',fontWeight: 'normal',textAlign: 'start'}}>{conto.nome}</h1>
                 <p style={{fontFamily: 'Roboto Slab',fontSize: '20px',color: 'rgba(255,255,255,1)',textOverflow: 'ellipsis',whiteSpace: 'nowrap',overflow: 'hidden'}}>{conto.desc}</p>
-                <Link to={'/'} style={stylebutton}>Acesse Agora!</Link>
+                <Link to={'/Conto'} onClick={() => {setRef(conto.ref)}} style={stylebutton}>Acesse Agora!</Link>
             </div>
             </li>
         }

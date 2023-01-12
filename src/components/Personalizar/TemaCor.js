@@ -28,16 +28,17 @@ document.title = 'Personalizar cor'
         Ciecon: ['#237c99','#149ecc','#5accf2','Ciecon'],
         RRH: ['#a60711','#7d0b12','#e6000e','RRH'],
         MR: ['#702b00', '#4d1d00','#853c10','Menino R.'],
-        Lich: ['#6e125e','#5c054d','#911f7e','Lich']
+        Lich: ['#6e125e','#5c054d','#911f7e','Lich'],
+        Netuno: ['#260073','#1f0259','#371085','Netuno']
       }
 
-      const array = [Fundos.UVC,Fundos.Ciecon,Fundos.RRH,Fundos.MR,Fundos.Lich]
+      const array = [Fundos.UVC,Fundos.Ciecon,Fundos.RRH,Fundos.MR,Fundos.Lich,Fundos.Netuno]
       console.log(array)
 
       const Grid = styled.div`
       display: grid;
       grid-template-columns: repeat(auto-fit,188px);
-      gap: 36px;
+      gap: 42px;
       justify-content: center;
       margin-top: 32px;
       `

@@ -47,7 +47,7 @@ const Home = function() {
       }
   `
 
-  const { cor,setCor } = useContext(UserContext)
+  const { cor,setCor,filter,setFilter } = useContext(UserContext)
 
   var mobile = window.outerWidth < 480
 
@@ -120,6 +120,15 @@ React.useEffect(function() {
   };
 }, [num]);
 
+function Filter() {
+  let FinalRef;
+  // if (index[0].toLocaleUpperCase === 'Series'.toLocaleUpperCase) {FinalRef = 'Serie'} else if (index[0].toLocaleUpperCase === 'Solos'.toLocaleUpperCase) {FinalRef = 'Solo'} else {FinalRef = index[0].toLocaleUpperCase}
+  if (index[0] === 'Solos') {setFilter('SOLO')} 
+  else if (index[0] === 'Series') {setFilter('SERIE')}
+  else {setFilter(index[0].toUpperCase())}
+  // setFilter(index[0].toUpperCase())
+  // setFilter(FinalRef.toUpperCase)
+}
 
   return (
     <div>
@@ -127,7 +136,7 @@ React.useEffect(function() {
     {!mobile && <div style={{width: '100%',height: 'calc(100vh - 82px)',maxWidth: '1800px',margin: '0 auto',position: 'relative'}}>
       <div style={{position: 'absolute',padding: '82px 45px',flexDirection: 'column-reverse',display: 'flex',gap:'12px',width: '100%',height: '100%',justifyContent: 'center',background: 'linear-gradient(49deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8841911764705882) 32%, rgba(0,0,0,0) 100%)',backdropFilter: 'blur(0.45px)'}}>
       <div style={{display:'flex',flexDirection: 'column-reverse',placeItems: 'center',gap:'10px',width:'30%' }}>
-      <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}}>Filtrar</Button>
+      <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}} onMouseOver={() =>   {console.log(index[0].toUpperCase())}} onClick={Filter}>Filtrar</Button>
       <p style={{maxWidth: '390px',fontSize: '25px',textAlign: 'center'}}>{index[2]}</p>
       <p style={{fontSize: '24px',fontFamily: 'Roboto Slab'}}>{index[1]}</p>
       <h1 className='fontslide' style={{textAlign: 'start',fontSize:'69px',letterSpacing: '2.8px',color: '#fff',textShadow: `rgba(0,0,0,0) 3px 5px 2px`}}>{index[0]}</h1>

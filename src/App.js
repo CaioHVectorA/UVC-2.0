@@ -25,6 +25,8 @@ const App = () => {
   const [search,setSearch] = React.useState('')
   const [ref,setRef] = React.useState('')
   const [Hist,setHist] = React.useState('')
+  const [read,setRead] = React.useState('')
+  const [filter,setFilter] = React.useState('')
   // const [personagemGlob,setPersonagemGlob] = React.useState(null)
   React.useEffect(() => {
     if (teste) {
@@ -33,7 +35,7 @@ const App = () => {
   }, [])
 return (
   <BrowserRouter>
-  <UserContext.Provider value={{ cor,setCor,search,setSearch,ref,setRef,Hist,setHist}}>
+  <UserContext.Provider value={{ cor,setCor,search,setSearch,ref,setRef,Hist,setHist,read,setRead,filter,setFilter}}>
   <Routes>
     <Route path="/" element={<Inicial />} />
     <Route path="Personalizar" element={<Personalizar />} />

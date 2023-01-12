@@ -64,6 +64,7 @@
          "Tipo":"SERIE",
          "Ref":"SE_MR1",
          "Local":"TERRA",
+         "eps": 12,
          "imgref":"MRsmall.png",
          "lancamento": "",
          "status": "Em progresso",
@@ -144,17 +145,17 @@
                "Episodios": {
                   "Ep10": {
                      "Nome":"Sem descanso",
-                     "Ref":"010.txt",
+                     "Ref":"10.txt",
                      "Numero": 10
                   },
                   "Ep11": {
                      "Nome":"Dois por um",
-                     "Ref":"011.txt",
+                     "Ref":"11.txt",
                      "Numero": 11
                   },
                   "Ep12": {
                      "Nome": "Vitória ou Auto-Ilusão?",
-                     "Ref": "012.txt",
+                     "Ref": "12.txt",
                      "Numero": 12
                   } 
                }

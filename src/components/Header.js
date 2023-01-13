@@ -18,7 +18,7 @@ color: white;
 const MenuConfig = styled.li`
 text-decoration: none;
 font-family: 'Lato';
-font-size: 40px;
+font-size: 28px;
 color: white;
 &:after {
     font-family: 'FontAwesome';
@@ -34,7 +34,7 @@ color: white;
 `
 
 const ListItemPerso = styled.a`
-
+/* font-size: 20px; */
 ` 
 
 const Search = styled.input`
@@ -103,8 +103,8 @@ var mobile = window.outerWidth < 600;
         <header style={{display: 'flex',maxWidth: '1800px',margin: '0 auto',justifyContent:'space-between',width:'100%',padding:'0px',backgroundColor:cor[0],alignItems: 'center',maxHeight: '82px',paddingRight: mobile ? '24px' : '0px'}}>
             <Link to="/Home"><img className="uvcimg" src={UVC} style={{width: '128px',height: '128px',transform: 'scale(1.4)',position: 'relative',left: mobile ? '46px' : '68px',top:'14px',transition: '330ms'}} /></Link>
             {!mobile && <ul style={{marginRight: '3%',display: 'flex',gap: '22px'}}>
-               <Link to="/Home" href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Contos</li> </Link>
-               <Link to="/Personagens" onClick={() => {localStorage.setItem('personagemGlob',null)}} className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Personagens</li> </Link>
+               <Link to="/Home" href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '28px',color: 'white',fontFamily: 'Lato'}}>Contos</li> </Link>
+               <Link to="/Personagens" onClick={() => {localStorage.setItem('personagemGlob',null)}} className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '28px',color: 'white',fontFamily: 'Lato'}}>Personagens</li> </Link>
                <div>
                <Link to="/Personalizar" href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato',position: 'relative'}}><MenuConfig onMouseOver={HandleOver} onMouseLeave={HandleLeave}>Outros</MenuConfig></Link>
                {dropdown && <div onMouseLeave={HandleLeave} onMouseOver={HandleOver} style={{width: '200px',display:'flex',flexDirection: 'column',position: 'absolute',top: '80px',justifyContent: 'center',zIndex: 100,animation: 'growDown 300ms ease-in-out forwards'}}>
@@ -112,7 +112,7 @@ var mobile = window.outerWidth < 600;
                 <Link to={"Home"} style={{color: 'white',backgroundColor: cor[1]}} className='listItemPerso'>Favoritos</Link>
                 </div>}
                </div>
-               <a href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '40px',color: 'white',fontFamily: 'Lato'}}>Saiba mais</li> </a>
+               <a href="#" className="scale" style={{textDecoration: 'none',fontFamily: 'Lato'}}><li style={{fontSize: '28px',color: 'white',fontFamily: 'Lato'}}>Saiba mais</li> </a>
                <div style={{display:'flex',height: '41px'}}>
                <Search onChange={(e) => {setBusca(e.target.value)}} onKeyDown={(e) => {if (e.key === 'Enter') {HandleSearch(busca)}}} placeholder="Ciecon   ..."></Search>
                <div onClick={() => {HandleSearch(busca)}} style={{backgroundColor: '#d9d9d9',borderRadius: '0px 25px 25px 0px',height: '100%',cursor: 'pointer',border: 'none',display: 'grid',placeItems: 'center'}}>

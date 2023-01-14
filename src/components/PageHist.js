@@ -26,7 +26,7 @@ font-family: Roboto Slab;
 border-radius: 5px;
 border: 1px solid rgba(0,0,0,0.8);
 &:hover {
-    background-color: ${(props) => props.cor[2]};
+    background-color: #202020 !important;
     cursor: pointer
 }
 color:  ${(props) => props.corletra[2]};
@@ -69,7 +69,7 @@ const PageHist = () => {
         }
       
         return (
-          <ButtonCheck corletra={[color,color,color,color]} cor={[backgroudColor,backgroudColor]}
+          <ButtonCheck corletra={[color,color,,color]} cor={[backgroudColor,backgroudColor]}
             style={{ color, backgroundColor: backgroudColor}}
             onClick={handleClick}
           >
@@ -82,6 +82,7 @@ const PageHist = () => {
       }
         const req = new XMLHttpRequest();
       req.addEventListener("load", reqListener);
+      console.log(process.env.PUBLIC_URL + '/txt/' + Hist)
       req.open("GET",process.env.PUBLIC_URL + '/txt/' + Hist);
       req.send();
       function Next() {
@@ -138,10 +139,10 @@ const PageHist = () => {
     <br /><br/><br/>
     <h2>Você está lendo: {read[0]},</h2>
     <br />
-    <h1> "{title}"</h1>
+    {read[1] &&<h1> "{title}"</h1>}
     <br /><br/><br/>
-    <div style={{width: '100%',display: 'flex',alignItems: 'center',flexDirection: 'column'}}>
-      {!mobile && <div style={{width: '76%',borderRadius: '12px 12px 0px 0px',borderBottom: '3px rgba(255,0,0,0.3) solid',backgroundColor: '#080808',display: 'grid',gridTemplateColumns: !mobile ? '4fr 2fr 2fr 4fr' :  '1fr 1fr',gridTemplateRows: mobile ? '1fr 1fr' : '1fr',placeItems:'center',padding: '12px 0px'}}>
+    <div style={{width: '100%',display: 'flex',alignItems: 'center',flexDirection: 'column',maxWidth: '1500px',margin: '0 auto'}}>
+      {!mobile && <div style={{width: '66%',borderRadius: '12px 12px 0px 0px',borderBottom: '3px rgba(255,0,0,0.3) solid',backgroundColor: '#080808',display: 'grid',gridTemplateColumns: !mobile ? '4fr 2fr 2fr 4fr' :  '1fr 1fr',gridTemplateRows: mobile ? '1fr 1fr' : '1fr',placeItems:'center',padding: '12px 0px',justifyContent: 'space-between'}}>
       {read[2] === 'SERIE' && <ButtonLer onClick={Prev}  cor={cor}>Anterior</ButtonLer>}
       <Button text={'Rolagem'}/>
       <Button text={'Inverso'}/>
@@ -149,7 +150,7 @@ const PageHist = () => {
 
       </div>
       }
-      {mobile && <div style={{width: '76%',borderRadius: '12px 12px 0px 0px',borderBottom: '3px rgba(255,0,0,0.3) solid',backgroundColor: '#080808',display: 'grid',gridTemplateColumns: !mobile ? '4fr 2fr 2fr 4fr' :  '1fr 1fr',gridTemplateRows: mobile ? '1fr 1fr' : '1fr',placeItems:'center',padding: '12px 0px',rowGap: '32px'}}>
+      {mobile && <div style={{width: '66%',minWidth: '340px',borderRadius: '12px 12px 0px 0px',borderBottom: '3px rgba(255,0,0,0.3) solid',backgroundColor: '#080808',display: 'grid',gridTemplateColumns: !mobile ? '4fr 2fr 2fr 4fr' :  '1fr 1fr',gridTemplateRows: mobile ? '1fr 1fr' : '1fr',placeItems:'center',padding: '12px 0px',rowGap: '32px',justifyContent: 'space-between'}}>
       <Button text={'Rolagem'}/>
       <Button text={'Inverso'}/>
       {read[2] === 'SERIE' && <ButtonLer onClick={Prev}  cor={cor}>Anterior</ButtonLer>}
@@ -157,7 +158,7 @@ const PageHist = () => {
 
       </div>
       }
-    <div className='scroll' style={{width: '76%',padding: '32px 40px',backgroundColor: Theme,border: '#d8d8d8 3.2px solid',borderRadius: '0px 0px 12px 12px',maxHeight: scrollw,overflowY: 'auto',marginBottom: '48px'}}>
+    <div className='scroll' style={{width: '66%',minWidth: '340px',padding: '32px 40px',backgroundColor: Theme,border: '#d8d8d8 3.2px solid',borderRadius: '0px 0px 12px 12px',maxHeight: scrollw,overflowY: 'auto',marginBottom: '48px'}}>
         <div className='boxtexto' dangerouslySetInnerHTML={{ __html: Text }}></div>
     </div>
     </div>

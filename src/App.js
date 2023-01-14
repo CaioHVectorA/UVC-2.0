@@ -33,6 +33,9 @@ const App = () => {
       setCor(JSON.parse(teste))
     }
   }, [])
+  window.onerror = function() {
+   console.log('teste')
+  }
 return (
   <BrowserRouter>
   <UserContext.Provider value={{ cor,setCor,search,setSearch,ref,setRef,Hist,setHist,read,setRead,filter,setFilter}}>

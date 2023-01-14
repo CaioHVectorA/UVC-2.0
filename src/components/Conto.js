@@ -106,8 +106,10 @@ function HandleClick(ep) {
 )
 }
 const Conto = () => {
+
   var mobile = window.outerWidth < 480
-    const { ref,setRef,cor,setCor } = React.useContext(UserContext)    
+  const { ref,setRef,cor,setCor,Hist,setHist,read,setRead } = React.useContext(UserContext)  
+    var Nav = useNavigate()
     const [heartsvg,setSvg] = React.useState(svgs.heart) 
     let refAtual;
     var NumEps;
@@ -121,6 +123,7 @@ const Conto = () => {
             NumEps = hist.eps
         }
     });
+    console.log(refAtual.Tipo)
   return (
     <div>
         <Header />
@@ -146,6 +149,7 @@ const Conto = () => {
         </div>
     </div>
     </div>
+    {refAtual.Tipo === 'SOLO' && <div style={{width: '100%',display: 'flex',justifyContent: 'center',marginTop: '32px'}}><ButtonLer onClick={() => {setHist(ref + '.txt') ; setRead(['Kerry,o guerreiro da vingança',null,'SOLO',1]) ; Nav('/PageHist')}} cor={cor}><p style={{fontSize: '40px'}}>Ler {refAtual.Nome} Agora</p></ButtonLer></div>}
     <Division size='90%' />
     {refAtual.Tipo === 'SERIE' && <div style={{display: 'grid',justifyContent: 'center'}}>
         <h1 style={{marginBottom: "32px"}}>Capítulos:</h1>

@@ -86,9 +86,10 @@ function HandleClick(ep) {
     setHist(ref + '/' + ep[1].Ref)
     setHisto(ref + '/' + ep[1].Ref)
     Nav('/PageHist')
-}
+}  
     return (
-        <div>   
+        <>
+        {data.Disponivel && <div>   
         <DropBox onClick={() => {if (display === 'none') {setDisplay('flex')} else {setDisplay('none')}}} cor={cor}>
             <p style={{fontFamily: 'Roboto Slab',fontSize: !mobile ? '26px' : '18px',whiteSpace: 'nowrap'}}>{data.Nome}</p>
             <Mais />
@@ -102,15 +103,15 @@ function HandleClick(ep) {
                     </div>
                 ))}
             </div>
-        </div>
+        </div>}
+        </>
 )
 }
 const Conto = () => {
-
+    const [Fav,setFav] = useGetCreateStorage('UVC_FAV','[]')
   var mobile = window.outerWidth < 480
   const { ref,setRef,cor,setCor,Hist,setHist,read,setRead } = React.useContext(UserContext)  
     var Nav = useNavigate()
-    const [heartsvg,setSvg] = React.useState(svgs.heart) 
     let refAtual;
     var NumEps;
     var nomehist;
@@ -123,7 +124,27 @@ const Conto = () => {
             NumEps = hist.eps
         }
     });
-    console.log(refAtual.Tipo)
+    const [heartsvg,setSvg] = React.useState(svgs.heart) 
+    React.useEffect(() => {
+        if (Fav.includes(refAtual.Ref)) {
+           setSvg(svgs.fullheart)
+        }
+    })
+    function Favoriter() {
+        if (heartsvg === svgs.heart) { setSvg(svgs.fullheart)} else {setSvg(svgs.heart)}
+        let TempFav = JSON.parse(Fav)
+        if (!TempFav.includes(refAtual.Ref)) {
+            TempFav.push(refAtual.Ref)
+           let StringFav = JSON.stringify(TempFav)
+           setFav(StringFav)
+        } else {
+            let NewFav = TempFav.filter((item) => {
+                return item !== refAtual.Ref
+            })
+            let StringFav = JSON.stringify(NewFav)
+            setFav(StringFav)
+        }
+    }
   return (
     <div>
         <Header />
@@ -132,7 +153,7 @@ const Conto = () => {
  <div style={{display: 'grid',gridTemplateColumns: '4.5fr 8.5fr',width: '100%',paddingTop: '32px',gap: '12px',maxWidth: '1500px',margin: '0 auto'}}>
     <div style={{display: 'flex',flexDirection: 'column',alignItems: 'center',paddingLeft: '132px',gap: '8px'}}>
         <div style={{width: '360px',height: '360px',padding: '24px',background: '#d9d9d9',borderRadius: '12px'}}><img src={process.env.PUBLIC_URL + 'img/' + refAtual.imgref} style={{width: '100%',height: '100%',objectFit: 'cover',borderRadius: '5px'}}/></div>
-        <svg onClick={() => {setSvg(svgs.fullheart)}} fill={'white'} width='48px' height='48px'><path d={heartsvg} ></path></svg>
+        <svg style={{transition: '32ms'}} onClick={Favoriter} fill={heartsvg === svgs.heart ? 'white' : '#ff5050'} width='48px' height='48px'><path d={heartsvg} ></path></svg>
     </div>
     <div>
         <h1>{refAtual.Nome}</h1>
@@ -149,7 +170,7 @@ const Conto = () => {
         </div>
     </div>
     </div>
-    {refAtual.Tipo === 'SOLO' && <div style={{width: '100%',display: 'flex',justifyContent: 'center',marginTop: '32px'}}><ButtonLer onClick={() => {setHist(ref + '.txt') ; setRead(['Kerry,o guerreiro da vingança',null,'SOLO',1]) ; Nav('/PageHist')}} cor={cor}><p style={{fontSize: '40px'}}>Ler {refAtual.Nome} Agora</p></ButtonLer></div>}
+    {refAtual.Tipo === 'SOLO' && <div style={{width: '100%',display: 'flex',justifyContent: 'center',marginTop: '32px'}}><ButtonLer onClick={() => {setHist(ref + '.txt') ; setRead([refAtual.Nome,null,'SOLO',1]) ; Nav('/PageHist')}} cor={cor}><p style={{fontSize: '40px'}}>Ler {refAtual.Nome} Agora</p></ButtonLer></div>}
     <Division size='90%' />
     {refAtual.Tipo === 'SERIE' && <div style={{display: 'grid',justifyContent: 'center'}}>
         <h1 style={{marginBottom: "32px"}}>Capítulos:</h1>
@@ -183,7 +204,7 @@ const Conto = () => {
     {refAtual.Tipo === 'SERIE' && <div style={{display: 'grid',justifyContent: 'center'}}>
         <h1 style={{marginBottom: "32px"}}>Capítulos:</h1>
         {refAtual.Capitulos.map((cap, index) => (
-            <DropDown cap={cap} refe={nomehist} tipo={refAtual.Tipo} eps={NumEps}/>
+            <DropDown key={index} cap={cap} refe={nomehist} tipo={refAtual.Tipo} eps={NumEps}/>
         ))}
         </div>} 
     </div>}

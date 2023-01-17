@@ -12,6 +12,7 @@ import Personagens from "./components/Personagens";
 import Search from "./components/Search";
 import Conto from "./components/Conto";
 import PageHist from "./components/PageHist";
+import Favorites from "./components/Personalizar/Favorites";
 const App = () => {
   const fundos = {
     UVC: ['#B140A6','#912987','#da4ecc'],
@@ -44,6 +45,7 @@ return (
     <Route path="Personalizar" element={<Personalizar />} />
     <Route path="/Personalizar/TemaCor" element={<TemaCor />} />
     <Route path="Home" element={<Home />} />
+    <Route path="/Personalizar/Favorites" element={<Favorites />} />
     <Route path="Personagens" element={<Personagens />} />
     <Route path="Search" element={<Search />} />
     <Route path="Conto" element={<Conto />} />

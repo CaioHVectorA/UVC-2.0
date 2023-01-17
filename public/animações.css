@@ -3,6 +3,8 @@
     transform: scale(1);
 }
 
+body {scroll-behavior: smooth;}
+
 .scale:hover {
     transform: scale(1.16);
 }
@@ -125,7 +127,7 @@ animation: abrirmenu 360ms ease-in-out forwards;
             }
 
             100% {
-                height: 155px;
+                height: 167px;
             }
         }
 

@@ -4,11 +4,12 @@
     --cor-secundaria: #da4ecc;
     --cor-terciaria: #6e2367;   
 }
+body {overflow: auto !important; }
 
 html {font-size: 12px;}
 a {text-decoration: none;}
 a:hover {cursor: pointer;}
-* {font-family: 'Arial';margin: 0}
+* {font-family: 'Arial';margin: 0;transition: 300ms;}
 
 @font-face {
     font-family: 'Lakers';
@@ -73,7 +74,7 @@ p {
     text-align: center;
     border-radius: 50px;
     font-size: 25px;
-    box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%);
+    /* box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%); */
     cursor: pointer;
     text-decoration: none;
     color: white;
@@ -109,4 +110,42 @@ font-size: 20px;
 border-bottom: 1px solid rgba(0,0,0,0.4);
 padding: 12px 6px;
 font-family: 'Ropa Sans';
+}
+
+.scroll::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+    border-radius: 20px;
+}
+
+.scroll::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+    border-radius: 20px;
+}
+
+.scroll::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+    border-radius: 20px;
+}
+
+.scroll::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+    border-radius: 20px;
 }

@@ -82,14 +82,13 @@ const PageHist = () => {
       }
         const req = new XMLHttpRequest();
       req.addEventListener("load", reqListener);
-      console.log(process.env.PUBLIC_URL + '/txt/' + Hist)
       req.open("GET",process.env.PUBLIC_URL + '/txt/' + Hist);
       req.send();
       function Next() {
         const [Pre,RefNum] = Hist.split('/')
         let [Num,txt] = RefNum.split('.')
         let TempNumber = parseInt(Num)
-        console.log(read[3])
+        console.log(read)
         if (TempNumber < read[3]) {
         
         let FinalNumber;
@@ -137,7 +136,7 @@ const PageHist = () => {
     <>
     <Header />
     <br /><br/><br/>
-    <h2>Você está lendo: {read[0]},</h2>
+    <h2>Você está lendo: {read[0]}{read[2] === 'SERIE'&& <span>,</span>}</h2>
     <br />
     {read[1] &&<h1> "{title}"</h1>}
     <br /><br/><br/>

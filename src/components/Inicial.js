@@ -14,7 +14,7 @@ const Inicial = () => {
       text-align: center;
       border-radius: 50px;
       font-size: 25px;
-      box-shadow: inset 0px -4px 1px rgb(0 0 0 / 50%);
+      box-shadow: 0 0 14px -7px ${cor[2]} !important;
       cursor: pointer;
       text-decoration: none;
       color: white;

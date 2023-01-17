@@ -10,7 +10,7 @@ import UserContext from './UserContext'
 import { useContext } from 'react'
 import styled from 'styled-components'
 import Hists from './Backend/Hists.json'
-console.log(Hists)
+import useGetCreateStorage from '../Hooks/useGetCreateStorage'
 
 const Division = function() {
   document.title = 'Contos'
@@ -24,10 +24,10 @@ const Division = function() {
 const Division2 = function() {
   return (
     <div style={{backgroundColor: 'rgba(255,255,255,0.5)',height: '3.5px',width: '80%',margin: '20px auto',borderRadius: '25px'}}></div>
-  )
-}
-
-const Home = function() {
+    )
+  }
+  
+  const Home = function() {
   const Button = styled.button`
       padding: 9px 16px;
       background-color: ${props => props.propscor[0]};

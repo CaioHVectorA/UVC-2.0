@@ -1,5 +1,155 @@
 {
     "AllHists":[
+      {
+         "Nome":"Hades",
+         "Tipo":"SOLO",
+         "Ref":"S_HAD",
+         "Desc": "Conheça profundamente a origem e os objetivos do Monstruoso e Soberano Demônio, que pretende dominar todo o universo com seu poder divino e maligno.",
+         "Local":"UNIVERSAL",
+         "lancamento": "",
+         "status": "Completo",
+         "escrito": "Caio Henrique",
+         "tags": [
+        "Drama","Universal","Ação","Violência"
+         ],
+         "imgref": "Hades.png"
+      },
+      {
+         "Nome":"Guardiões",
+         "Tipo":"SERIE",
+         "Ref":"SE_GUA",
+         "Local":"TERRA",
+         "eps": 6,
+         "Desc":"Beenie se muda da cidade com seus pais em busca de uma vida melhor e um futuro promissor. Porém nessa cidade,há coisas que eles nunca imaginariam que teriam que enfrentar.",
+         "lancamento": "",
+         "status": "Em progresso",
+         "escrito": "Caio Henrique",
+         "imgref": "Guardioes.png",
+         "tags": ["Terra","Drama","Ação","Equipe"],
+         "Capitulos": [
+            {
+               "Nome": "Metamorfoses",
+               "Disponivel": true,
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep1": {
+                     "Nome":"Mudanças",
+                     "Ref":"01.txt",
+                     "Numero": 1
+                  },
+                  "Ep2": {
+                     "Nome":"Dificuldades",
+                     "Ref":"02.txt",
+                     "Numero": 2
+                  },
+                  "Ep3": {
+                     "Nome": "Poderes",
+                     "Ref": "03.txt",
+                     "Numero": 3
+                  } 
+               }
+            },
+            {
+               "Nome": "Apocalipse",
+               "Disponivel": true,
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep4": {
+                     "Nome":"Más Sensações",
+                     "Ref":"04.txt",
+                     "Numero": 4
+                  },
+                  "Ep5": {
+                     "Nome":"Lutas Mentais",
+                     "Ref":"05.txt",
+                     "Numero": 5
+                  },
+                  "Ep6": {
+                     "Nome": "O Apocalipse",
+                     "Ref": "06.txt",
+                     "Numero": 6
+                  } 
+               }
+            }
+         ]
+      },
+      {
+         "Nome":"Congregadores",
+         "Tipo":"SERIE",
+         "Ref":"SE_CONG",
+         "Local":"TERRA",
+         "eps": 6,
+         "Desc":"Ciecon,um divertido e simples garoto,de repente se apossa de um poder enorme.Dedicado e astuto,ele decide que vai acabar com a injustiça e os males do universo.",
+         "lancamento": "",
+         "status": "Em progresso",
+         "escrito": "Caio Henrique",
+         "imgref": "Cong.png",
+         "tags": ["Universal","Sci-Fi","Ação","Equipe"],
+         "Capitulos": [
+            {
+               "Nome": "Selvagem",
+               "Disponivel": true,
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep1": {
+                     "Nome":"A Extinção",
+                     "Ref":"01.txt",
+                     "Numero": 1
+                  },
+                  "Ep2": {
+                     "Nome":"Uma Nova Amizade",
+                     "Ref":"02.txt",
+                     "Numero": 2
+                  },
+                  "Ep3": {
+                     "Nome": "O Futuro Incerto",
+                     "Ref": "03.txt",
+                     "Numero": 3
+                  } 
+               }
+            },
+            {
+               "Nome": "Tirania e Sobenaria",
+               "Disponivel": true,
+               "NumEps": 3,
+               "DescCap": "blablabla",
+               "Episodios": {
+                  "Ep4": {
+                     "Nome":"Escravidão",
+                     "Ref":"04.txt",
+                     "Numero": 4
+                  },
+                  "Ep5": {
+                     "Nome":"A Barbárie",
+                     "Ref":"05.txt",
+                     "Numero": 5
+                  },
+                  "Ep6": {
+                     "Nome": "Áurea",
+                     "Ref": "06.txt",
+                     "Numero": 6
+                  } 
+               }
+            }
+         ]
+      },
+      {
+         "Nome":"Ciecon",
+         "Tipo":"SOLO",
+         "Ref":"S_CIEC",
+         "Desc": "Leia a históriae origem difícil do justiceiro espacial,Ciecon. Que posteriormente avançou a jornada e se tornou o líder dos Congregadores..",
+         "Local":"UNIVERSAL",
+         "lancamento": "",
+         "status": "Completo",
+         "escrito": "Caio Henrique",
+         "tags": [
+        "Drama","Universal","Sci-Fi"
+         ],
+         "imgref": "Ciecon.png"
+      },
        {
           "Nome":"Kerry,o Guerreiro da Vingança",
           "Tipo":"SOLO",
@@ -65,7 +215,7 @@
          "Ref":"SE_MR1",
          "Local":"TERRA",
          "eps": 12,
-         "imgref":"MRsmall.png",
+         "imgref":"MeninoResiliente.png",
          "lancamento": "",
          "status": "Em progresso",
          "escrito": "Caio Henrique",
@@ -74,6 +224,7 @@
          "Capitulos":[
             {
                "Nome":"Uma nova Luz",
+               "Disponivel": true,
                "NumEps":3,
                "DescCap":"Lorem Ipsum blablabla",
                "Episodios":{
@@ -96,6 +247,7 @@
             },
             {
                "Nome":"Resiliência e Persistência",
+               "Disponivel": true,
                "NumEps":3,
                "DescCap":"Lorem Ipsum blablabla",
                "Episodios":{
@@ -118,6 +270,7 @@
             },
             {
                "Nome": "Persistência e Ascensão",
+               "Disponivel": true,
                "NumEps": 3,
                "DescCap": "blablabla",
                "Episodios": {
@@ -140,6 +293,7 @@
             },
             {
                "Nome": "Ascensão e Vitória!",
+               "Disponivel": true,
                "NumEps": 3,
                "DescCap": "blablabla",
                "Episodios": {

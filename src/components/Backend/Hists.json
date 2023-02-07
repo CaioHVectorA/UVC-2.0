@@ -12,7 +12,8 @@
          "tags": [
         "Drama","Universal","Ação","Violência"
          ],
-         "imgref": "Hades.png"
+         "imgref": "Hades.png",
+         "associados": ["SE_CIEC","SE_CONG","SE_GUA"]
       },
       {
          "Nome":"Guardiões",
@@ -25,6 +26,7 @@
          "status": "Em progresso",
          "escrito": "Caio Henrique",
          "imgref": "Guardioes.png",
+         "associados": ["SE_MR1","S_KER"],
          "tags": ["Terra","Drama","Ação","Equipe"],
          "Capitulos": [
             {
@@ -86,6 +88,7 @@
          "status": "Em progresso",
          "escrito": "Caio Henrique",
          "imgref": "Cong.png",
+         "associados": ["SE_CIEC","SE_RRH"],
          "tags": ["Universal","Sci-Fi","Ação","Equipe"],
          "Capitulos": [
             {
@@ -148,7 +151,8 @@
          "tags": [
         "Drama","Universal","Sci-Fi"
          ],
-         "imgref": "Ciecon.png"
+         "imgref": "Ciecon.png",
+         "associados": ["SE_CONG","S_HAD"]
       },
        {
           "Nome":"Kerry,o Guerreiro da Vingança",
@@ -162,7 +166,8 @@
           "tags": [
          "Drama","Terra","Ação","Violência"
           ],
-          "imgref": "Kerry.png"
+          "imgref": "Kerry.png",
+          "associados": ["SE_GUA","SE_MR1"]
        },
        {
           "Nome":"Red Right Hand",
@@ -174,6 +179,7 @@
           "status": "Em progresso",
           "escrito": "Caio Henrique",
           "imgref": "rrhcapa.png",
+          "associados": ["SE_CONG"],
           "Capitulos":[
              {
                 "Nome":"Primeiros passos",
@@ -216,6 +222,7 @@
          "Local":"TERRA",
          "eps": 12,
          "imgref":"MeninoResiliente.png",
+         "associados": ["S_KER","SE_GUA"],
          "lancamento": "",
          "status": "Em progresso",
          "escrito": "Caio Henrique",

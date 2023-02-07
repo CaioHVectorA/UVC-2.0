@@ -126,10 +126,13 @@ function Filter() {
   if (index[0] === 'Solos') {setFilter('SOLO')} 
   else if (index[0] === 'Series') {setFilter('SERIE')}
   else {setFilter(index[0].toUpperCase())}
+  window.scroll(0,800)
   // setFilter(index[0].toUpperCase())
   // setFilter(FinalRef.toUpperCase)
 }
-
+React.useEffect(() => {
+setFilter('')
+},[])
   return (
     <div>
         <Header />
@@ -153,24 +156,28 @@ function Filter() {
         <Division2 />
       <div className='slider'>
         <div className='slide'>
-               <img src={process.env.PUBLIC_URL + 'imgs/' + 'cidade.jpg'} style={{width: '200px',height: '200px',objectFit: 'cover',borderRadius: '15px'}}/>
+               <img src={process.env.PUBLIC_URL + 'imgs/' + 'cidade.jpg'} style={{width: '320px',height: '320px',objectFit: 'cover',borderRadius: '15px'}}/>
         <h2 style={{margin: '0px',position: 'relative',top: '8px',zIndex: '-1'}}>TERRA</h2>
         <p style={{textAlign: 'center',marginTop: '-32px'}}>Contos que se passam na terra,e geralmente são mais cômicos e leves,algumas mais reais e até sentimentais.</p> 
+              <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}} onMouseOver={() =>   {console.log(index[0].toUpperCase())}} onClick={() => {setFilter('TERRA') ; window.scroll(0,800)}}>Filtrar</Button>
         </div>
         <div className='slide'>
-        <img src={process.env.PUBLIC_URL + 'imgs/' + 'espaço.jpg'} style={{width: '200px',height: '200px',objectFit: 'cover',borderRadius: '15px'}}/>
+        <img src={process.env.PUBLIC_URL + 'imgs/' + 'espaço.jpg'} style={{width: '320px',height: '320px',objectFit: 'cover',borderRadius: '15px'}}/>
           <h2 style={{margin: '0px',position: 'relative',top: '8px',zIndex: '-1'}}>UNIVERSAL</h2>
           <p style={{textAlign: 'center',marginTop: '-32px'}}>Contos que se passam no espaço,sendo essencialmente mais profundos,científicos e complexos.</p>
+              <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}} onMouseOver={() =>   {console.log(index[0].toUpperCase())}} onClick={() => {setFilter('UNIVERSAL') ; window.scroll(0,800)}}>Filtrar</Button>
         </div>
         <div className='slide'>
-        <img src={process.env.PUBLIC_URL + 'imgs/' + 'solos.png'} style={{width: '200px',height: '200px',objectFit: 'cover',borderRadius: '15px'}}/>
+        <img src={process.env.PUBLIC_URL + 'imgs/' + 'solos.png'} style={{width: '320px',height: '320px',objectFit: 'cover',borderRadius: '15px'}}/>
         <h2 style={{margin: '0px',position: 'relative',top: '8px',zIndex: '-1'}}>SOLOS</h2>
         <p style={{textAlign: 'center',marginTop: '-32px'}}>Histórias diretas,sem episódios que aprofundam personagens,sejam eles heróis ou vilões.</p>
+              <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}} onMouseOver={() =>   {console.log(index[0].toUpperCase())}} onClick={() => {setFilter('SOLO') ; window.scroll(0,800)}}>Filtrar</Button>
         </div>
         <div className='slide'>
-        <img src={process.env.PUBLIC_URL + 'imgs/' + 'mrslide.png'} style={{width: '200px',height: '200px',objectFit: 'cover',borderRadius: '15px'}}/>
+        <img src={process.env.PUBLIC_URL + 'imgs/' + 'mrslide.png'} style={{width: '320px',height: '320px',objectFit: 'cover',borderRadius: '15px'}}/>
         <h2 style={{margin: '0px',position: 'relative',top: '8px',zIndex: '-1'}}>SERIES</h2>
         <p style={{textAlign: 'center',marginTop: '-32px'}}>Histórias longas,separada em episódios que contam histórias tramas de equipes ou personagens.</p>
+              <Button propscor={cor} style={{width: '80%',maxWidth: '100%',opacity: '0.8',transition: '400ms',borderRadius: '5px'}} onMouseOver={() =>   {console.log(index[0].toUpperCase())}} onClick={() => {setFilter('SERIE') ; window.scroll(0,800)}}>Filtrar</Button>
         </div>
       </div>
       </div>

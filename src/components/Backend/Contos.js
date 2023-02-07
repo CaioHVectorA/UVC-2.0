@@ -6,6 +6,7 @@ function Hist(...Args) {
     this.img = '/img/' + Args[4]
     this.ref = Args[5]
     this.tipoimg = Args[7]
+    this.associados = Args[8]
 }
 
 const Kerry = new Hist(
@@ -16,7 +17,8 @@ const Kerry = new Hist(
     'Kerry.png',
     'S_KER',
     ['Drama','Terra','Ação','Violência'],
-    'Normal'
+    'Normal',
+    ['SE_GUA','SE_MR1']
 )
 
 const MR1 = new Hist(
@@ -27,7 +29,8 @@ const MR1 = new Hist(
     'MeninoResiliente.png',
     'SE_MR1',
     ['Drama','Terra','Ação','Teen'],
-    'Normal'
+    'Normal',
+    ['SE_GUA','S_KER']
 )
 
 const Hades = new Hist(
@@ -38,7 +41,8 @@ const Hades = new Hist(
     'Hades.png',
     'S_HAD',
    ["Drama","Universal","Ação","Violência"],
-   'Normal'
+   'Normal',
+   ['S_CIEC','SE_CONG','SE_GUA']
 )
 
 const Ciecon = new Hist(
@@ -49,7 +53,8 @@ const Ciecon = new Hist(
     'Ciecon.png',
     'S_CIEC',
     ["Drama","Universal","Ação"],
-    'Full'
+    'Full',
+    ['SE_CONG']
 )
 const Cong = new Hist(
     'Congregadores',
@@ -59,7 +64,8 @@ const Cong = new Hist(
     'Cong.png',
     'SE_CONG',
     ["Universal","Sci-fi","Ação","Equipe"],
-    'Full'
+    'Full',
+    ['S_CIEC']
 )
 
 const Guard = new Hist(
@@ -70,7 +76,8 @@ const Guard = new Hist(
     'Guardioes.png',
     'SE_GUA',
     ["Terra","Drama","Ação","Equipe"],
-    'Full'
+    'Full',
+    ['S_KER','SE_MR1']
 )
 var AllContos = [Kerry,MR1,Hades,Ciecon,Cong,Guard]
 export default AllContos

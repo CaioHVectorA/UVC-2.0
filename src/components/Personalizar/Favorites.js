@@ -14,14 +14,15 @@ const Favorites = () => {
   const LinkBar = styled.li`
 color: white;
 font-family: 'Roboto Slab';
-width: calc(100% - 0px);
+width: calc(80% - 0px);
 /* background-color: ${cor[0]} ; */
 font-size: 32px;
 padding: 12px 40px;
 position: relative;
+margin: 0 auto;
 text-align: center;
 &:hover {
-  border-radius: 25px;
+  border-radius: 0px;
   border-bottom: 2px solid #121212;
 background-color: ${cor[1]};
 }

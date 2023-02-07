@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UserContext from './UserContext'
 import Hists from './Backend/Hists.json'
 import Header from './Header'
@@ -145,6 +145,24 @@ const Conto = () => {
             setFav(StringFav)
         }
     }
+    const [refAss,setRefAss] = React.useState([])
+    if (!temparray) {var temparray = []}
+useEffect(() => {
+    if (refAtual) {
+        refAtual.associados.forEach(ass => {
+            Hists.AllHists.forEach(hist => {
+                if (hist.Ref === ass) {
+                    if (!temparray.includes(hist)) {
+                        temparray.push(hist)
+                    }
+                    setRefAss(temparray)
+                    console.log(refAss)
+                console.log(refAss)
+            }
+          });  
+        });
+    }
+},[refAtual])
   return (
     <div>
         <Header />
@@ -178,12 +196,25 @@ const Conto = () => {
             <DropDown cap={cap} refe={nomehist} tipo={refAtual.Tipo} eps={NumEps}/>
         ))}
         </div>} 
+        <Division size='95%' />
+        <div>
+            <h2 style={{textAlign: 'start',marginLeft: '48px'}}>Relacionados</h2>
+            <p style={{fontSize: '18px',marginLeft: '48px',color: 'rgba(255,255,255,.75)'}}>Histórias parecidas e relacionadas com esta.Experimente!</p>
+            <div style={{display: 'flex',gap: '48px',padding: '20px 64px'}}> 
+            {refAss.map(ass => (
+                <div onClick={() => {setRef(ass.Ref) ; window.scroll(0,-300)}} style={{display: 'grid',justifyContent: 'center'}}>
+                <p style={{fontSize: '18px',textAlign: 'center',margin: '6px 0px',fontWeight: 'bold',maxWidth: '180px'}}>{ass.Nome}</p>
+                <img className='scale' src={process.env.PUBLIC_URL + 'img/' + ass.imgref} style={{width: '200px',height: '200px'}}/>
+                </div>
+                ))}
+                </div>
+        </div>
     </div>}
 {refAtual && nomehist && mobile && <div>
  <div style={{display: 'flex',flexDirection: 'column',width: '100%',paddingTop: '32px',gap: '12px',maxWidth: '1500px',margin: '0 auto'}}>
     <div style={{display: 'flex',flexDirection: 'column',alignItems: 'center',gap: '8px'}}>
         <h2 style={{fontSize: '30px',whiteSpace: 'nowrap'}}>{refAtual.Nome}</h2>
-        <div style={{width: '260px',height: '260px',padding: '24px',background: '#d9d9d9',borderRadius: '12px'}}><img src={process.env.PUBLIC_URL + 'img/' + refAtual.imgref} style={{width: '100%',height: '100%',objectFit: 'cover',borderRadius: '5px'}}/></div>
+        <div style={{width: '300px',height: '300px',padding: '24px',background: '#d9d9d9',borderRadius: '12px'}}><img src={process.env.PUBLIC_URL + 'img/' + refAtual.imgref} style={{width: '100%',height: '100%',objectFit: 'cover',borderRadius: '5px'}}/></div>
         <svg onClick={() => {setSvg(svgs.fullheart)}} fill={'white'} width='48px' height='48px'><path d={heartsvg} ></path></svg>
     </div>
     <div>

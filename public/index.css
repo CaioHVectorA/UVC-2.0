@@ -56,7 +56,7 @@ p {
     font-size: 2.7rem;
 }
 
-.teste:hover {
+.scale {
     cursor: pointer;
 }
 
@@ -94,11 +94,12 @@ p {
   }
 
   .slide {
-    width: 200px;
-    height: 500px;
+    width: 320px;
+    height: 600px;
     flex-shrink: 0;
     border-radius: 25px;
     display: grid;
+    justify-items: center;
     grid-template-rows: 1fr 76px 1fr;
     /* background: 
     background-size: cover; */

@@ -42,7 +42,7 @@ const Div = (nome,local,tipo,desc,img,ref,tags,tipoimg) => {
             </div>}
           {filter && filtrado && <div>
             <Link  to={'/Conto'} onClick={() => {setRef(ref)}}>
-              <div style={{width: '300px',height: '300px',padding: '24px',background: '#d9d9d9'}}><div style={{width: '100%',height: '100%',backgroundImage:imglink,backgroundPosition:'center',backgroundSize:'100%'}}></div></div>
+              <div style={{width: '300px',height: '300px',padding: tipoimg === 'Full' ? '0px' : '24px',background: '#d9d9d9'}}><div style={{width: '100%',height: '100%',backgroundImage:imglink,backgroundPosition:'center',backgroundSize:'100%'}}></div></div>
             <div style={{height: '245px',background: '#131313',width: '300px',padding: '20px 0px',display: 'grid',justifyContent: 'center',marginBottom: '100px'}}>
              <div style={{display: 'flex',minWidth: '300px',justifyContent: 'space-between'}}>
              <p style={{color: '#e7e7e7',fontFamily: 'Arial',margin: '8px 20px',fontSize: '22px',color: local==='TERRA' ? 'greenyellow' : 'yellow'}}>{local}</p>
